@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "defaults": {"request_format": "pcm"},
+  "models": {
+    "minimax/speech-2.8-hd": {
+      "supported_formats": ["mp3"],
+      "request_format": "mp3",
+      "source": "https://openrouter.ai/minimax/speech-2.8-hd"
+    }
+  }
+}
