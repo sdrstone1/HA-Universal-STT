@@ -1,0 +1,29 @@
+{
+  "repo": {},
+  "projects": [
+    {
+      "anchor_dir": "",
+      "review_gate": {
+        "highrisk_extra": "custom_components/universal_stt/(config_flow|__init__)\\.py$"
+      },
+      "report_gate": {
+        "min_report": [],
+        "large_report": ["work/issues/", "work/graphs/"]
+      },
+      "completion_gate": {
+        "required_artifacts": ["work/issues/", "work/graphs/"]
+      },
+      "device_gate": {
+        "enabled": true
+      }
+    }
+  ],
+  "termination_gate": {
+    "artifact_globs": [
+      "work/graphs/{graph_id}.md",
+      "work/issues/{graph_id}.md"
+    ]
+  },
+  "xctest_scope_guard": {"enabled": false},
+  "xctest_serialize": {"enabled": false}
+}
