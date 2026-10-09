@@ -1,0 +1,153 @@
+{
+  "title": "HA Universal Voice",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Choose a service and features",
+        "description": "Select a service and the voice features to enable. Enter connection details on the next screen.",
+        "data": {
+          "provider": "Service",
+          "mode": "Features"
+        }
+      },
+      "connection": {
+        "title": "Enter connection details",
+        "description": "Enter connection details for the selected service and features. A blank API key keeps the saved key only for the same provider and URL. Enter a new key when switching services. Disable discovery to enter model and voice IDs manually.",
+        "data": {
+          "base_url": "API base URL (custom service)",
+          "api_key": "API key",
+          "clear_api_key": "Clear saved API key",
+          "discover": "Discover models and voices",
+          "stt_models_url": "STT model catalog URL (custom, optional)",
+          "stt_models_api_key": "STT catalog API key (optional)",
+          "clear_stt_models_api_key": "Clear saved STT catalog key",
+          "tts_models_url": "TTS model catalog URL (custom, optional)",
+          "tts_models_api_key": "TTS catalog API key (optional)",
+          "clear_tts_models_api_key": "Clear saved TTS catalog key",
+          "stt_url": "STT inference URL (custom, optional)",
+          "stt_api_key": "STT inference API key (optional)",
+          "clear_stt_api_key": "Clear saved STT inference key",
+          "tts_url": "TTS inference URL (custom, optional)",
+          "tts_api_key": "TTS inference API key (optional)",
+          "clear_tts_api_key": "Clear saved TTS inference key",
+          "tts_streaming": "Stream TTS audio output"
+        },
+        "data_description": {
+          "stt_models_url": "Full GET catalog URL. Leave blank to enter this model ID manually. Both catalogs may use the same URL. This is not the audio inference endpoint.",
+          "stt_models_api_key": "Bearer key. When blank, reuse the speech key only on the same scheme, host and port; other origins receive no key.",
+          "tts_models_url": "Full GET catalog URL. Leave blank to enter this model ID manually. Both catalogs may use the same URL. This is not the audio inference endpoint.",
+          "tts_models_api_key": "Bearer key. When blank, reuse the speech key only on the same scheme, host and port; other origins receive no key.",
+          "stt_url": "Full POST URL. Blank uses the base URL plus /audio/transcriptions. The payload and response must remain OpenAI-compatible.",
+          "stt_api_key": "Bearer key for this endpoint. Without a separate key, reuse the shared key only on the same scheme, host and port.",
+          "tts_url": "Full POST URL. Blank uses the base URL plus /audio/speech. The payload and response must remain OpenAI-compatible.",
+          "tts_api_key": "Bearer key for this endpoint. Without a separate key, reuse the shared key only on the same scheme, host and port.",
+          "tts_streaming": "Off by default. Stream generated audio after receiving the complete text. Verify playback with your voice and speaker."
+        }
+      },
+      "model": {
+        "title": "Choose an STT model",
+        "description": "Choose the transcription language in your Assist pipeline.",
+        "data": {
+          "model": "STT model"
+        }
+      },
+      "tts": {
+        "title": "Choose a TTS model",
+        "description": "Choose a model supporting WAV for Gemini or MP3 for other services.",
+        "data": {
+          "tts_model": "TTS model"
+        }
+      },
+      "voice": {
+        "title": "Choose a voice",
+        "description": "OpenRouter, xAI and Gemini show fetched voices; OpenAI shows documented built-in voices. Enter an ID if discovery is disabled or your voice is missing.",
+        "data": {
+          "voice": "Voice ID"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Enter a valid HTTP(S) API root or endpoint URL.",
+      "invalid_auth": "The service rejected the API key.",
+      "cannot_connect": "Unable to fetch models. Retry or disable discovery.",
+      "invalid_model": "Enter a model ID.",
+      "invalid_voice": "Enter a voice ID.",
+      "invalid_config": "Check the connection settings and API key format."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Choose a service and features",
+        "description": "Select a service and the voice features to enable. Enter connection details on the next screen.",
+        "data": {
+          "provider": "Service",
+          "mode": "Features"
+        }
+      },
+      "connection": {
+        "title": "Enter connection details",
+        "description": "Enter connection details for the selected service and features. A blank API key keeps the saved key only for the same provider and URL. Enter a new key when switching services. Disable discovery to enter model and voice IDs manually.",
+        "data": {
+          "base_url": "API base URL (custom service)",
+          "api_key": "API key",
+          "clear_api_key": "Clear saved API key",
+          "discover": "Discover models and voices",
+          "stt_models_url": "STT model catalog URL (custom, optional)",
+          "stt_models_api_key": "STT catalog API key (optional)",
+          "clear_stt_models_api_key": "Clear saved STT catalog key",
+          "tts_models_url": "TTS model catalog URL (custom, optional)",
+          "tts_models_api_key": "TTS catalog API key (optional)",
+          "clear_tts_models_api_key": "Clear saved TTS catalog key",
+          "stt_url": "STT inference URL (custom, optional)",
+          "stt_api_key": "STT inference API key (optional)",
+          "clear_stt_api_key": "Clear saved STT inference key",
+          "tts_url": "TTS inference URL (custom, optional)",
+          "tts_api_key": "TTS inference API key (optional)",
+          "clear_tts_api_key": "Clear saved TTS inference key",
+          "tts_streaming": "Stream TTS audio output"
+        },
+        "data_description": {
+          "stt_models_url": "Full GET catalog URL. Leave blank to enter this model ID manually. Both catalogs may use the same URL. This is not the audio inference endpoint.",
+          "stt_models_api_key": "Bearer key. When blank, reuse the speech key only on the same scheme, host and port; other origins receive no key.",
+          "tts_models_url": "Full GET catalog URL. Leave blank to enter this model ID manually. Both catalogs may use the same URL. This is not the audio inference endpoint.",
+          "tts_models_api_key": "Bearer key. When blank, reuse the speech key only on the same scheme, host and port; other origins receive no key.",
+          "stt_url": "Full POST URL. Blank uses the base URL plus /audio/transcriptions. The payload and response must remain OpenAI-compatible.",
+          "stt_api_key": "Bearer key for this endpoint. Without a separate key, reuse the shared key only on the same scheme, host and port.",
+          "tts_url": "Full POST URL. Blank uses the base URL plus /audio/speech. The payload and response must remain OpenAI-compatible.",
+          "tts_api_key": "Bearer key for this endpoint. Without a separate key, reuse the shared key only on the same scheme, host and port.",
+          "tts_streaming": "Off by default. Stream generated audio after receiving the complete text. Verify playback with your voice and speaker."
+        }
+      },
+      "model": {
+        "title": "Choose an STT model",
+        "description": "Choose the transcription language in your Assist pipeline.",
+        "data": {
+          "model": "STT model"
+        }
+      },
+      "tts": {
+        "title": "Choose a TTS model",
+        "description": "Choose a model supporting WAV for Gemini or MP3 for other services.",
+        "data": {
+          "tts_model": "TTS model"
+        }
+      },
+      "voice": {
+        "title": "Choose a voice",
+        "description": "OpenRouter, xAI and Gemini show fetched voices; OpenAI shows documented built-in voices. Enter an ID if discovery is disabled or your voice is missing.",
+        "data": {
+          "voice": "Voice ID"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Enter a valid HTTP(S) API root or endpoint URL.",
+      "invalid_auth": "The service rejected the API key.",
+      "cannot_connect": "Unable to fetch models. Retry or disable discovery.",
+      "invalid_model": "Enter a model ID.",
+      "invalid_voice": "Enter a voice ID.",
+      "invalid_config": "Check the connection settings and API key format."
+    }
+  }
+}

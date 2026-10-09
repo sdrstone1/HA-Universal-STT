@@ -1,0 +1,13 @@
+{
+  "domain": "universal_stt",
+  "name": "HA Universal Voice",
+  "codeowners": [
+    "@sdrstone1"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/sdrstone1/HA-Universal-STT",
+  "issue_tracker": "https://github.com/sdrstone1/HA-Universal-STT/issues",
+  "iot_class": "cloud_push",
+  "requirements": [],
+  "version": "0.3.0"
+}
